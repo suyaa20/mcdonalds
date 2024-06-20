@@ -8,6 +8,7 @@ window.addEventListener('load', function () {
     const close = document.querySelector('.topSearch .close')
     const aside = document.querySelector('.aside')
     const btnTop = document.querySelector('.btnTop')
+    const ftHeight =  document.querySelector('.footer').clientHeight + 50
 
     //hMenu에 마우스가 들어가면 header에 open클래스 적용
     hMenu.addEventListener('mouseenter', function () {
@@ -29,20 +30,52 @@ window.addEventListener('load', function () {
         topSearch.classList.remove("open");
     })
 
+    console.log( document.querySelector('.footer'))
+
+
     //window 스크롤되면
     window.addEventListener('scroll', function () {
         //html문서를 수직으로 얼마나 스크롤 했는지 값을 구해서 변수에 담는다
         const docScrollTop = document.querySelector('html').scrollTop
         const footOffsetT = document.querySelector('.footer').offsetTop - window.innerHeight
-        console.log(footOffsetT, docScrollTop)
+        
+        
+
+        console.log(footOffsetT, docScrollTop ,ftHeight)
 
         if (docScrollTop > 20 && docScrollTop < footOffsetT) { // docScrollTop 100이상 일때
-            aside.style.display = 'block'
             header.classList.add('fixed')
-        } else if (docScrollTop > footOffsetT){
-            console.log("여기서 사라짐")
-            
+            aside.style.display = 'block'
+            aside.style.position = 'fixed'
+            aside.style.bottom = '50px'
+        } else if (docScrollTop > footOffsetT + 150 ){
+           aside.style.position = 'absolute'
+           aside.style.bottom = ftHeight + "px"
+
         }
+
+
+
+
+        
+    // $(window).on('scroll', function () {
+    //     const scrollTop = $(window).scrollTop();
+    //     const windowHeight = $(window).height();
+    //     const ftHeight = $('#footer').height();
+
+    //     if (scrollTop + windowHeight >= ftOffsetTop) {
+    //         $(quick).css({
+    //             position: 'absolute',
+    //             bottom : ftHeight + 30
+    //         })
+    //     }else{
+    //         $(quick).css({
+    //             position: 'fixed',
+    //             bottom : 30
+    //         })
+    //     }
+
+    // })
 
         console.log("html 문서를 수직으로 얼마나 스크롤 했는지 ", docScrollTop)
         console.log("윈도우(브라우저)를 수직으로 얼마나 스크롤 했는지 ", window.scrollY)

@@ -16,7 +16,7 @@ button { border: 0; cursor: pointer; }
 .headArea , 
 .inner , 
 .footArea {width: 1168px; margin: 0 auto;}
-
+.wrapper{position: relative;}
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 클리어픽스
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -69,7 +69,7 @@ button { border: 0; cursor: pointer; }
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 메인비주얼영역
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-.mainSlide { margin-top: 80px; } 
+.mainSlide { width: 1920px; margin: 80px auto 0; } 
 .mainSlide .swiper-button-prev{
     width: 90px; height: 90px; left: 0;
     background: url(../images/bg_swiper_new.png) no-repeat 0 0; 
@@ -142,7 +142,7 @@ button { border: 0; cursor: pointer; }
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .aside{
     position: fixed; 
-    bottom: 110px; left: 48%; 
+    bottom: 60px; left: 48%; 
     /* transform: translateX(660px);  */
     margin-left: 660px;
     z-index: 10; 
